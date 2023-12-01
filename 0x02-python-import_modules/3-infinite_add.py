@@ -8,5 +8,5 @@ if __name__ == "__main__":
 
     for t in range(len(sys.argv) - 1):
         loop += int(sys.argv[t + 1])
-    print("{}".format(loop))
+    print(loop)
 
