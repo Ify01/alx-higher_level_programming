@@ -4,11 +4,9 @@ if __name__ == "__main__":
     import sys
 
     
-    total = 0
+    loop = 0
 
-    
-    for arg in sys.argv[1:]:
-        total += int(arg)
+    for t in range(len(sys.argv) - 1):
+        loop += int(sys.argv[t + 1])
+    print("{}".format(loop))
 
-    
-    print(total)
