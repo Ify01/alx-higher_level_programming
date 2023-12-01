@@ -3,6 +3,7 @@
 if __name__ == "__main__":
     from add_0 import add
 
-result = add(1, 2)
+a = 1
+b = 2
 
-print(f"1 + 2 = {result}")
+print("{} + {} = {}".format(a,b, add(a, b)))

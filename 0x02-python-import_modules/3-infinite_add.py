@@ -3,10 +3,12 @@
 if __name__ == "__main__":
     import sys
 
+    
+    total = 0
 
-    looping = 0
-
+    
     for arg in sys.argv[1:]:
-        looping += int(arg)
+        total += int(arg)
 
-    print(looping)
+    
+    print(total)
