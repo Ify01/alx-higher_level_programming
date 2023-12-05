@@ -8,7 +8,7 @@
 
 void print_python_list_info(PyObject *p)
 {
-    long int cover, given, y;
+    long int size, allocated, y;
     PyObject *item;
 
     if (!PyList_Check(p))
@@ -17,12 +17,12 @@ void print_python_list_info(PyObject *p)
         return;
     }
 
-    cover = PyList_Size(p);
-    given = ((PyListObject *)p)->given;
+    size = PyList_Size(p);
+    allocated = ((PyListObject *)p)->allocated;
 
-    printf("[*] Size of the Python List = %li\n", cover);
-    printf("[*] Allocated = %li\n", given);
-    for (y = 0; y < cover; y++)
+    printf("[*] Size of the Python List = %li\n", size);
+    printf("[*] Allocated = %li\n", allocated);
+    for (y = 0; y < size; y++)
     {
         item = PyList_GetItem(p, y);
         printf("Element %li: %s\n", y, Py_TYPE(item)->tp_name);
