@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 
 
-from itertools import zip_longest
-
 def add_tuple(tuple_a=(0, 0), tuple_b=(0, 0)):
-    added_tuple = tuple(x + y for x, y in zip_longest(tuple_a, tuple_b, fillvalue=0))
+    if len(tuple_a) == 1:
+        tuple_a = tuple_a[0], 0
+    if len(tuple_b) == 1:
+        tuple_b = tuple_b[0], 0
+
+    added_tuple = tuple(x + y for x, y in zip(tuple_a, tuple_b))
     return added_tuple
