@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/python3
 def search_replace(my_list, search, replace):
-    return list(map(lambda x: x if x != search else replace, my_list))
+    def find_search(element):
+        return element if element != search else replace
+    return list(map(find_search, my_list))
