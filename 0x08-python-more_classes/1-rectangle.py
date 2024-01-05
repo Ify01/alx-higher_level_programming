@@ -6,44 +6,44 @@ class Rectangle:
     """This class represents a rectangle"""
 
     def __init__(self, width=0, height=0):
-        """Initialize the rectangle class.
-        
+        """
+        Initializes the Rectangle class.
+
         Args:
             width (int): Represents the width of the rectangle.
             height (int): Represents the height of the rectangle.
 
         Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than zero.
+            TypeError: If width or height is not an integer.
+            ValueError: If width or height is less than zero.
         """
-        self._width = width
-        self._height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """Get the width attribute."""
-        return self._width
+        """Retrieves the width attribute"""
+        return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the width attribute."""
-        self._validate_size(value, "width")
-        self._width = value
+        """Sets the width attribute"""
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
     @property
     def height(self):
-        """Get the height attribute."""
-        return self._height
+        """Retrieves the height attribute"""
+        return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the height attribute."""
-        self._validate_size(value, "height")
-        self._height = value
-
-    def _validate_size(self, value, attribute):
-        """Validate that size is an integer and non-negative."""
+        """Sets the height attribute"""
         if not isinstance(value, int):
-            raise TypeError(f"{attribute} must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError(f"{attribute} must be >= 0")
+            raise ValueError("height must be >= 0")
+        self.__height = value
